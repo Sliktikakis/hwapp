@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails',                    '4.2.2'
+gem 'mysql2',					'~> 0.3.18'
 gem 'sass-rails',               '5.0.2'
 gem 'uglifier',                 '2.5.3'
 gem 'coffee-rails',             '4.1.0'
@@ -12,7 +13,6 @@ gem 'jbuilder',                 '2.2.3'
 gem 'sdoc',                     '0.4.0', group: :doc
 
 group :development, :test do
-  gem 'mysql2'
   gem 'byebug',      '3.4.0'
   gem 'web-console', '2.0.0.beta3'
   gem 'spring',      '1.1.3'
