@@ -2,9 +2,12 @@
 
 <h1><%= "#{@user.name}" %></h1>
 <h3><%= "#{@user.email}" %></h3>
-<p>User activity graph</p>
 
+<div class="container mailchart">
+	<%= line_chart @data %>
+</div>
 
+<!--
 <ul class="mails">
   <%= render @sent_mails %>
 </ul>
@@ -14,3 +17,4 @@
   	<%= render partial: "sent_mails/received_mail", locals: {received_mail: r} %>
   <% end %>
 </ul>
+//-->
