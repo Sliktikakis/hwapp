@@ -2,7 +2,7 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   def setup
-  	@user = User.new(email: "user@example.com", name: "Example User")
+  	@user = User.new(email: "foo@bar.com", name: "Foo Bar")
   end
 
   test "should be valid" do
@@ -30,7 +30,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "email should have email format" do
-  	valid_emails = %w[user@example.com USER@foo.COM A_US-ER@foo.bar.org first.last@foo.jp alice+bob@baz.cn]
+  	valid_emails = %w[foo@bar.com USER@foo.COM A_US-ER@foo.bar.org first.last@foo.jp alice+bob@baz.cn]
   	valid_emails.each do |v|
   		@user.email = v
   		assert @user.valid?, "#{v.inspect} should be valid"

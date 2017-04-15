@@ -1,0 +1,15 @@
+<% provide(:title, "#{@user.name}") %>
+
+<h1><%= "#{@user.name}" %></h1>
+<h3><%= "#{@user.email}" %></h3>
+<p>User activity graph</p>
+
+<ul class="mails">
+  <%= render @sent_mails %>
+</ul>
+
+<ul class="mails">
+  <% @received_mails.each do |r| %>
+  	<%= render partial: "sent_mails/received_mail", locals: {received_mail: r} %>
+  <% end %>
+</ul>

@@ -1,1 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+exuser:
+  id: 1
+  email: user@example.com
+  name: Example User
+
+exuser2:
+  id: 2
+  email: user2@example.com
+  name: Example User 2
