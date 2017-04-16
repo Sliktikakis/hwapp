@@ -1,14 +1,32 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-/* universal */
-
 body {
   padding-top: 60px;
   padding-bottom: 100px;
 }
 
-.mailchart {
+#mailchart {
 	min-width: 310px;
 	max-width: 600px;
+}
+
+div.search {
+	padding: 20px 40px;
+	background-color: #d3d3d3;
+	margin: 0px 200px 40px 200px;
+	border-radius: 6px;
+	transition: 0.4s;
+	&:hover {
+		background-color: #bbb;
+	}
+	h4 {
+		margin-bottom: 30px;
+	}
+	form {
+		text-align: center;
+	}
+	select {
+		margin-right: 30px;
+	}
 }

@@ -1,7 +1,35 @@
-<% provide(:title, 'Home') %>
+<% provide(:title, "Homework") %>
 
-<h1>Users</h1>
+<div class="search">
+	<h4 class="text-center">SELECT AN USER TO DISPLAY HIS MAILING ACTIVITY</h4>
+	<%= form_for(:user, url: select_user_path, method: :post, remote: true) do |f| %>
+		<%= f.collection_select(:id, User.all, :id, :name, prompt: "Please select", id: "select-user") %>
+		<%= f.submit "Choose user", class: "btn btn-primary", id: "select-user-btn" %>
+	<% end %>
+</div>
 
-<ul class="users">
-	<%= render @users %>
-</ul>
+<canvas class="container" id="mailchart"></canvas>
+
+<script type="text/javascript">
+    var ctx = document.getElementById("mailchart").getContext("2d");
+    ch = new Chart(ctx, {
+      	type: 'line',
+      	data: <%= raw @data.to_json %>,
+      	options: {
+        	scales: {
+            	yAxes: [{
+                	ticks: {
+                    	beginAtZero:true
+                	}
+            	}]
+        	},
+        	title: {
+        		display: true,
+        		text: "Number of mails exchanged"
+        	},
+        	legend: {
+        		position: 'bottom'
+        	}
+    	}
+    });
+</script>

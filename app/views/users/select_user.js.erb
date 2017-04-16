@@ -1,0 +1,4 @@
+ch.data.datasets[0].data = <%= raw @sent_data.to_json %>;
+ch.data.datasets[1].data = <%= raw @rec_data.to_json %>;
+
+ch.update(1000);

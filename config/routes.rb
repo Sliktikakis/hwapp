@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root 'users#index'
 
-  resources :users
+  post 'select_user',
+    :controller => 'users',
+    :action     => 'select_user'
 end

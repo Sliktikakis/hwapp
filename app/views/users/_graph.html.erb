@@ -1,0 +1,26 @@
+<canvas class="container" id="mailchart"></canvas>
+
+<script type="text/javascript">
+    var ctx = document.getElementById("mailchart").getContext("2d");
+
+    var ch = new Chart(ctx).Line({
+  		labels: ["a", "b", "c"],
+  		datasets: [
+    		{
+        		label: "Sent emails",
+        		backgroundColor: "rgba(220,220,220,0.2)",
+        		borderColor: "rgba(220,220,220,1)",
+        		data: [1,2,3]
+    		},
+    		{
+        		label: "Received emails",
+        		backgroundColor: "rgba(151,187,205,0.2)",
+        		borderColor: "rgba(151,187,205,1)",
+        		data: [1,2,3]
+    		}
+  		]
+	  },
+      options: {animationSteps = 50};
+    });
+    localStorage.setItem("chart", ch);
+</script>
