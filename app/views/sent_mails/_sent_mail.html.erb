@@ -1,5 +1,0 @@
-<li>
-  Sent to 
-  <%= link_to "#{sent_mail.recipient_address}", User.find_by(email: sent_mail.recipient_address) %>
-  <%= " on #{sent_mail.created_at.strftime("%Y/%m/%d")}" %>
-</li>
